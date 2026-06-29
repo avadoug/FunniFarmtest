@@ -8,10 +8,10 @@ and intended for adults.
 
 Core message:
 
-- Hemp without the high.
 - CBG-forward adult wellness.
 - Non-intoxicating hemp products.
 - Small-batch hemp wellness.
+- Farm-crafted hemp wellness.
 - Farm-made, lab-tested, transparent products.
 - Simple plant-based additions to adult daily routines.
 
@@ -19,7 +19,8 @@ Core message:
 
 - Non-intoxicating hemp wellness.
 - CBG-forward hemp products.
-- Hemp without the high.
+- Farm-crafted hemp wellness.
+- CBG-forward daily wellness.
 - Made for adult wellness routines.
 - Small-batch CBG products.
 - Plant-based daily ritual.
@@ -156,7 +157,7 @@ Use:
 
 Avoid:
 
-- High, except in the approved phrase "hemp without the high."
+- High.
 - Legal high.
 - THC gummies.
 - Delta-8 gummies.

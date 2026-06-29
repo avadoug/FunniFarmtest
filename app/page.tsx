@@ -79,7 +79,7 @@ export default async function HomePage() {
             </div>
             <div className="relative z-10 mx-auto -mt-4 flex max-w-md flex-wrap justify-center gap-2 text-center text-[0.68rem] font-black uppercase tracking-[0.12em] text-forest-900 sm:text-xs">
               <span className="rounded-full border border-forest-900/15 bg-harvest-300 px-3 py-2 shadow-soft">
-                Hemp Without the High
+                Farm-Crafted Wellness
               </span>
               <span className="rounded-full border border-forest-900/15 bg-forest-700 px-3 py-2 text-cream-50 shadow-soft">
                 CBG-Forward
@@ -98,11 +98,11 @@ export default async function HomePage() {
               </span>
             </div>
             <h1 className="font-display text-5xl font-black leading-[0.95] text-forest-900 sm:text-6xl lg:text-7xl">
-              Hemp Without the High
+              CBG-Forward Hemp Wellness
             </h1>
             <p className="mt-6 max-w-2xl text-xl font-semibold leading-8 text-forest-900/86">
               Small-batch CBG-forward hemp products crafted for adults who want
-              clean, non-intoxicating plant-based wellness.
+              clean, plant-based wellness with farm-made care.
             </p>
             <p className="mt-4 max-w-2xl text-base font-medium leading-7 text-forest-900/78">
               The Funni Farm makes simple hemp wellness goods with farm-crafted
@@ -152,7 +152,7 @@ export default async function HomePage() {
           <TrustBadge
             icon={ShieldCheck}
             text="Non-intoxicating positioning, age confirmations, and product disclaimers included."
-            title="Hemp Without the High"
+            title="CBG-Forward Wellness"
           />
         </div>
       </section>

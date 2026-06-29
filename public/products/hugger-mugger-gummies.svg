@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hugger Mugger Gummies placeholder package</title>
+  <desc id="desc">Adult hemp gummy label artwork with dark botanical styling and Funni Farm badge.</desc>
+  <rect width="900" height="900" fill="#fff3dc"/>
+  <rect x="70" y="86" width="760" height="728" rx="38" fill="#171611" stroke="#d09a44" stroke-width="10"/>
+  <rect x="102" y="118" width="696" height="664" rx="26" fill="#241c18" stroke="#6f4c21" stroke-width="3"/>
+  <circle cx="450" cy="292" r="160" fill="#0f130c" stroke="#d09a44" stroke-width="7"/>
+  <path d="M450 132v320M290 292h320M337 179l226 226M563 179L337 405" stroke="#8f6129" stroke-width="3" opacity=".7"/>
+  <text x="450" y="270" fill="#fff2d2" font-family="Georgia, serif" font-size="52" font-weight="700" text-anchor="middle">HUGGER</text>
+  <text x="450" y="334" fill="#fff2d2" font-family="Georgia, serif" font-size="52" font-weight="700" text-anchor="middle">MUGGER</text>
+  <text x="450" y="408" fill="#92a45e" font-family="Georgia, serif" font-size="66" font-weight="700" text-anchor="middle">GUMMIES</text>
+  <g transform="translate(150 478)">
+    <rect width="600" height="122" rx="18" fill="#fff3dc" stroke="#d09a44" stroke-width="4"/>
+    <text x="300" y="52" fill="#2c2218" font-family="Arial, sans-serif" font-size="32" font-weight="700" text-anchor="middle">SMALL-BATCH CBG</text>
+    <text x="300" y="92" fill="#51315c" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">ADULT HEMP PRODUCT</text>
+  </g>
+  <g fill="#a94635" stroke="#fff2d2" stroke-width="5">
+    <rect x="170" y="645" width="82" height="82" rx="18"/>
+    <rect x="288" y="645" width="82" height="82" rx="18" fill="#c48a24"/>
+    <rect x="406" y="645" width="82" height="82" rx="18" fill="#6f8742"/>
+    <rect x="524" y="645" width="82" height="82" rx="18" fill="#8b3b5f"/>
+    <rect x="642" y="645" width="82" height="82" rx="18" fill="#c24f32"/>
+  </g>
+  <text x="450" y="767" fill="#fff2d2" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">LAB TESTED PLACEHOLDER • 21+</text>
+</svg>

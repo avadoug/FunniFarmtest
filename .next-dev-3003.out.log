@@ -1,0 +1,14 @@
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3003
+   - Network:      http://192.168.0.138:3003
+
+ ✓ Starting...
+ ✓ Ready in 3.9s
+ ○ Compiling / ...
+ ✓ Compiled / in 1612ms (738 modules)
+ GET / 200 in 2267ms
+ GET / 200 in 308ms
+ GET / 200 in 292ms
+ ○ Compiling /shop ...
+ ✓ Compiled /shop in 2.7s (753 modules)
+ GET /shop 200 in 3403ms

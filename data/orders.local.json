@@ -1,0 +1,47 @@
+[
+  {
+    "status": "order_request_pending_email",
+    "customer": {
+      "firstName": "Dou8g",
+      "lastName": "Ellis",
+      "email": "ho@ho.com",
+      "phone": "8888888888",
+      "address1": "333 n glassell",
+      "address2": "",
+      "city": "Orange",
+      "state": "CALIFORNIA",
+      "postalCode": "92666",
+      "country": "US"
+    },
+    "items": [
+      {
+        "productId": "prod_hugger_mugger_gummies",
+        "slug": "hugger-mugger-gummies",
+        "name": "Hugger Mugger Gummies",
+        "image": "/products/hugger-mugger-gummies.svg",
+        "category": "CBG Gummies",
+        "quantity": 1,
+        "unitPrice": 20,
+        "lineTotal": 20
+      }
+    ],
+    "subtotal": 20,
+    "estimatedShipping": 0,
+    "estimatedTax": 0,
+    "total": 20,
+    "compliance": {
+      "ageConfirmed": true,
+      "nonIntoxicatingAcknowledged": true,
+      "diseaseDisclaimerAccepted": true,
+      "lawsAccepted": true
+    },
+    "paymentProvider": "manual-email",
+    "paymentSessionId": "dev_email_f87df18b-2e08-42b9-a494-7debad9db10b",
+    "paymentSessionUrl": "http://localhost:3000/order-confirmation",
+    "notes": "Development-only order request. Configure Resend and FUNNI_FARM_ORDER_EMAIL to email Funni Farm in production.",
+    "id": "ord_5f46d536-b862-4d3e-a27e-c8f0294f68d3",
+    "orderNumber": "FF-20260629-0001",
+    "createdAt": "2026-06-29T15:29:15.801Z",
+    "updatedAt": "2026-06-29T15:29:15.801Z"
+  }
+]

@@ -1,0 +1,34 @@
+# dependencies
+node_modules
+
+# next
+.next
+out
+tsconfig.tsbuildinfo
+.next-dev*.log
+
+# production
+build
+
+# env
+.env
+.env.local
+.env.*.local
+.env*.local
+
+# logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# local generated customer/order data
+data/orders.local.json
+data/contact-submissions.local.json
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode

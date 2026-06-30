@@ -5,11 +5,11 @@ export const farmImages = {
   },
   megaGummyBearRed: {
     alt: "Large sugar-coated CBG gummy bear on parchment paper.",
-    src: "/images/farm/mega-gummy-bear-red.webp",
+    src: "/images/products/mega-cbg-gummy-bear-red-card.webp",
   },
   megaGummyBearBlue: {
     alt: "Large blue sugar-coated CBG gummy bear on parchment paper.",
-    src: "/images/farm/mega-gummy-bear-blue.webp",
+    src: "/images/products/mega-cbg-gummy-bear-blue-card.webp",
   },
   hempFieldSun: {
     alt: "Sunlit rows of hemp plants growing in a Tennessee field.",

@@ -16,7 +16,7 @@ Do these first:
 4. Finalize product descriptions, prices, ingredients, inventory, and serving language.
 5. Confirm legal shipping states and product-specific shipping restrictions.
 6. Connect production order request emails and contact form handling.
-7. Replace placeholder policies with reviewed business-specific policies.
+7. Review integrated policy PDFs and finish the remaining hemp compliance policy.
 8. Connect a real database for production products, orders, contacts, and admin changes.
 9. Replace the local-only admin guard with proper authentication.
 10. Complete legal, hemp compliance, payment-method, and policy review.
@@ -61,6 +61,7 @@ npm run start
 - `lib/orders/` - mock order types and local-only JSON storage
 - `data/products.json` - starter product catalog
 - `public/brand/` - logo and hero/social artwork placeholders
+- `public/policies/` - deployable PDF policies and customer guides
 - `public/products/` - product placeholder artwork
 - `docs/BRAND.md` - visual brand guide
 - `docs/BRAND_LANGUAGE.md` - approved language, banned phrases, and SEO guardrails
@@ -169,11 +170,12 @@ Get merchant approval first, confirm requirements, add provider credentials serv
 
 ## Compliance Warnings
 
-This project includes placeholders, not legal advice.
+This project includes policy drafts and placeholders, not legal advice.
 
 Before launch:
 
-- Replace all placeholder policies.
+- Review all integrated policies, customer guides, and PDF documents.
+- Finish the hemp compliance policy for the confirmed product mix.
 - Add real COA PDFs and batch numbers.
 - Confirm federal hemp compliance.
 - Confirm allowed shipping states.

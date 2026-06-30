@@ -10,7 +10,7 @@ Do these before treating the storefront as launch-ready:
 4. Finalize product descriptions, prices, ingredients, and inventory.
 5. Confirm legal shipping states and product-by-product shipping restrictions.
 6. Connect contact form and order request emails for production.
-7. Replace placeholder policies with business-specific reviewed policies.
+7. Review integrated business policies and finish the remaining hemp compliance policy.
 8. Connect a real database for products, orders, customers, contact leads, and admin operations.
 9. Replace the local-only admin guard with proper authenticated admin access.
 10. Complete legal, hemp compliance, payment-method, and policy review.
@@ -34,7 +34,8 @@ Important production warning:
 - Confirm final brand colors and typography.
 - Add real Our Story photos once supplied.
 - Add founder names, farm history, and community details.
-- Add real business location or service area.
+- Business address added: `3610 Lewis Atkins Rd., Woodlawn, TN 37191`.
+- Business phone added: `(931) 551-0899`.
 - Confirm `thefunnifarm@outlook.com` is the final public business email.
 - Add real social links.
 - Decide whether wholesale accounts are needed.
@@ -127,13 +128,24 @@ Important production warning:
 
 ## Policies
 
-- Replace Terms of Service placeholder.
-- Replace Privacy Policy placeholder.
-- Replace Shipping Policy placeholder.
-- Replace Refund Policy placeholder.
+- Terms & Conditions PDF integrated into the site; get final legal/compliance review before launch.
+- Privacy Policy PDF integrated into the site; get final legal/compliance review before launch.
+- Shipping Policy PDF integrated into the site; get final legal/compliance review before launch.
+- Updated Refund Policy PDF integrated into the site; get final legal/compliance review before launch.
 - Replace Hemp Compliance Policy placeholder.
-- Replace Age Policy placeholder.
-- Replace Disclaimer placeholder.
+- Age Verification Policy PDF integrated into the site; get final legal/compliance review before launch.
+- FDA Disclaimer PDF integrated into the site; get final legal/compliance review before launch.
+- Website Disclaimer PDF integrated into the site; get final legal/compliance review before launch.
+- Product Warnings & Safe Use PDF integrated into the site; get final label/legal/compliance review before launch.
+- Responsible Use Guide PDF integrated into the site; get final label/legal/compliance review before launch.
+- Consumer Safety Guide PDF integrated into the site; get final label/legal/compliance review before launch.
+- Product Storage & Shelf Life Guide PDF integrated into the site; get final label/legal/compliance review before launch.
+- Cookie Policy PDF integrated into the site; get final legal/privacy review before launch.
+- Accessibility Statement PDF integrated into the site; get final accessibility/legal review before launch.
+- Wholesale Policy PDF integrated into the site; get final legal/compliance review before launch.
+- Affiliate & Influencer Policy PDF integrated into the site; get final advertising/legal review before launch.
+- Recall & Incident Response Policy PDF integrated into the site; get final safety/legal review before launch.
+- Quality Guarantee PDF integrated into the site; get final legal/compliance review before launch.
 - Confirm no fake legal guarantees are present.
 
 ## Testing

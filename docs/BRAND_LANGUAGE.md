@@ -3,12 +3,12 @@
 ## Positioning
 
 The Funni Farm is a small-batch hemp and CBG wellness brand. Products should be
-described as non-intoxicating, CBG-forward, farm-crafted, lab-tested, transparent,
+described as non-intoxicating, CBG-rich, farm-crafted, lab-tested, transparent,
 and intended for adults.
 
 Core message:
 
-- CBG-forward adult wellness.
+- CBG-rich adult wellness.
 - Non-intoxicating hemp products.
 - Small-batch hemp wellness.
 - Farm-crafted hemp wellness.
@@ -18,9 +18,10 @@ Core message:
 ## Approved Phrases
 
 - Non-intoxicating hemp wellness.
-- CBG-forward hemp products.
+- CBG-rich hemp products.
+- CBG-rich where supported by the product label and COA.
 - Farm-crafted hemp wellness.
-- CBG-forward daily wellness.
+- CBG-rich daily wellness.
 - Made for adult wellness routines.
 - Small-batch CBG products.
 - Plant-based daily ritual.
@@ -55,6 +56,8 @@ ads, reviews, or calls to action:
 - Dispensary-style language.
 - Party language.
 - Candy-for-kids energy.
+- Old cannabinoid "forward" positioning; use CBG-rich wording instead when
+  product labels and COAs support it.
 
 ## Medical Claim Guardrails
 
@@ -124,17 +127,17 @@ Checkout confirmations:
 
 CBG gummy:
 
-A non-intoxicating, CBG-forward gummy made in small batches for adult hemp
+A non-intoxicating, CBG-rich gummy made in small batches for adult hemp
 wellness routines. Batch-labeled and lab-tested for transparency.
 
 CBG oil:
 
-A simple CBG-forward hemp oil for adults who want a measured, non-intoxicating
+A simple CBG-rich hemp oil for adults who want a measured, non-intoxicating
 plant-based addition to their daily routine.
 
 Hemp flower:
 
-Non-intoxicating hemp flower with CBG-forward character, batch details, and COA
+Non-intoxicating hemp flower with CBG-rich character, batch details, and COA
 support. Availability depends on local laws and shipping rules.
 
 Seeds:
@@ -148,7 +151,7 @@ Use:
 
 - The Funni Farm CBG Gummies.
 - Non-intoxicating hemp wellness.
-- CBG-forward gummies.
+- CBG-rich gummies.
 - Small-batch hemp products.
 - Lab-tested hemp goods.
 - Adult hemp wellness.

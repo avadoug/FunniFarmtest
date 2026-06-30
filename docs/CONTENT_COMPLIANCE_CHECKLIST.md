@@ -24,7 +24,7 @@ Use this checklist before publishing or updating every product page.
 ## Required Product-Page Language
 
 - Non-intoxicating.
-- CBG-forward where applicable.
+- CBG-rich wording is supported by the product label, batch details, or COA.
 - Lab-tested or lab testing pending.
 - Batch-labeled or batch number pending.
 - Adult use only.

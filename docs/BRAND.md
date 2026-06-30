@@ -2,7 +2,7 @@
 
 ## Brand Feel
 
-Warm, handmade, artistic, trustworthy, earthy, small-farm, CBG-forward, clear,
+Warm, handmade, artistic, trustworthy, earthy, small-farm, CBG-rich, clear,
 adult, and wellness-minded.
 
 ## Visual Language
@@ -50,7 +50,7 @@ Use the logo in:
 
 - Use warm, plain language.
 - Keep product descriptions adult, accurate, and label-supported.
-- Lead with non-intoxicating hemp wellness, CBG-forward products, and lab
+- Lead with non-intoxicating hemp wellness, CBG-rich products, and lab
   transparency.
 - Do not make medical claims or imply that products address diseases,
   symptoms, or medical conditions.
@@ -64,6 +64,24 @@ Replace placeholder SVGs with real product photos and label artwork:
 
 - Clean front-of-package images.
 - Detail shots of labels, ingredients, QR/COA areas, batch numbers.
+- Product-logo panels cropped from approved labels, especially the CBG Gummies
+  front label artwork, can be used as category and product-brand visuals.
 - Farm/process images that feel real, not stock.
 - Neutral cream, wood, paper, or field backgrounds.
 - Avoid neon, smoke-shop styling, cartoon candy presentation, or medical imagery.
+
+## CBG Gummies Product Logo Style
+
+The CBG Gummies label establishes a product-brand style for future product
+logos: hand-rendered farm label artwork, cream paper texture, dark ink,
+harvest-gold highlights, deep purple accents, Hershey mascot presence, and
+clear product facts on the artwork itself.
+
+Future product logo images should follow this pattern:
+
+- The product name is readable at small and medium sizes.
+- Flavor, count, net weight, and serving information appear only when confirmed.
+- Adult-use and hemp compliance marks remain visible but not used as playful
+  decoration.
+- Product logos should feel handmade and farm-crafted, not recreational,
+  smoke-shop, or medical.

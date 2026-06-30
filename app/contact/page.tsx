@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Instagram, Mail, MapPin, MessageCircle, Store } from "lucide-react";
+import { Instagram, Mail, MapPin, MessageCircle, Phone, Store } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { businessInfo } from "@/lib/brand/businessInfo";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact The Funni Farm at thefunnifarm@outlook.com for product questions, wholesale inquiries, and order support.",
+    "Contact The Funni Farm in Woodlawn, Tennessee for product questions, wholesale inquiries, and order support.",
 };
 
 export default function ContactPage() {
@@ -18,9 +19,9 @@ export default function ContactPage() {
           order support. You can email the farm directly at{" "}
           <a
             className="font-black text-clay underline decoration-clay/35 underline-offset-4 hover:text-forest-900"
-            href="mailto:thefunnifarm@outlook.com"
+            href={businessInfo.emailHref}
           >
-            thefunnifarm@outlook.com
+            {businessInfo.email}
           </a>
           .
         </p>
@@ -29,15 +30,21 @@ export default function ContactPage() {
       <div className="mt-10 grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
         <aside className="space-y-4">
           <Info
-            href="mailto:thefunnifarm@outlook.com"
+            href={businessInfo.emailHref}
             icon={Mail}
             title="Business Email"
-            value="thefunnifarm@outlook.com"
+            value={businessInfo.email}
+          />
+          <Info
+            href={businessInfo.phoneHref}
+            icon={Phone}
+            title="Business Phone"
+            value={businessInfo.phone}
           />
           <Info
             icon={MapPin}
             title="Farm / Location"
-            value="Tennessee family farm. Add city or service area details later."
+            value={businessInfo.addressInline}
           />
           <Info
             icon={Instagram}

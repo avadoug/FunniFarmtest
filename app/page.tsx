@@ -19,6 +19,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TrustBadge } from "@/components/ui/TrustBadge";
 import { farmImages } from "@/lib/brand/farmImages";
 import { jackFrostCoa } from "@/lib/coa/jackFrostCbg001";
+import { funniFarmFaqs } from "@/lib/content/faq";
 import {
   getFeaturedProducts,
   getProducts,
@@ -38,20 +39,7 @@ const categoryDescriptions: Record<string, string> = {
   Merch: "Shirts, stickers, hats, and simple farm goods.",
 };
 
-const faqs = [
-  [
-    "Do you collect credit card numbers?",
-    "No. This first version sends an order request to The Funni Farm. They reply by email with Cash App, PayPal, or other approved non-card payment options after review.",
-  ],
-  [
-    "Are the product claims final?",
-    "No. Product, ingredient, cannabinoid, batch, COA, and policy details are placeholders until The Funni Farm supplies verified business information.",
-  ],
-  [
-    "Can you ship everywhere?",
-    "Not automatically. Hemp laws vary by state and locality, so final shipping restrictions need legal and payment-method review before launch.",
-  ],
-];
+const faqs = funniFarmFaqs.slice(0, 4);
 
 const orderSteps = [
   {
@@ -96,6 +84,33 @@ const processHighlights = [
     image: farmImages.hempStartsTable,
     label: "Hands-on farm work",
     text: "Young plants, outdoor work tables, and careful attention keep the farm story visible.",
+  },
+];
+
+const customerTrustLinks = [
+  {
+    href: "/policies/transparency-customer-trust",
+    title: "Transparent shopping",
+    text: "How product information, COAs, batch IDs, and open communication help customers make informed choices.",
+    icon: HeartHandshake,
+  },
+  {
+    href: "/policies/product-claims-labeling",
+    title: "Truthful labels",
+    text: "The standards behind ingredient details, label updates, product descriptions, and no disease claims.",
+    icon: FileText,
+  },
+  {
+    href: "/policies/product-traceability",
+    title: "Batch traceability",
+    text: "How batch and lot information supports customer questions, quality reviews, and product history.",
+    icon: ClipboardCheck,
+  },
+  {
+    href: "/policies/product-quality-complaints",
+    title: "Quality support",
+    text: "What to do if something arrives damaged, incorrect, or needs a careful product-quality review.",
+    icon: ShieldCheck,
   },
 ];
 
@@ -250,6 +265,38 @@ export default async function HomePage() {
                 Read Jack Frost COA
               </ButtonLink>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[.82fr_1.18fr] lg:items-start">
+          <SectionHeading
+            eyebrow="Customer trust library"
+            title="Clear answers before you order."
+          >
+            <p>
+              The Funni Farm policy center now includes practical customer
+              guides for labeling, traceability, responsible marketing, support,
+              quality concerns, storage, website use, and order expectations.
+            </p>
+          </SectionHeading>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {customerTrustLinks.map((item) => (
+              <Link
+                className="seed-card rounded-seed p-5 transition hover:-translate-y-1 hover:shadow-farm"
+                href={item.href}
+                key={item.href}
+              >
+                <item.icon aria-hidden className="size-7 text-forest-700" />
+                <h3 className="mt-4 font-display text-2xl font-black text-forest-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-forest-900/70">
+                  {item.text}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -529,19 +576,24 @@ export default async function HomePage() {
               FAQ preview
             </p>
             <div className="mt-6 space-y-4">
-              {faqs.map(([question, answer]) => (
+              {faqs.map((item) => (
                 <details
                   className="rounded-2xl border border-forest-900/10 bg-white/45 p-4"
-                  key={question}
+                  key={item.question}
                 >
                   <summary className="cursor-pointer font-black text-forest-900">
-                    {question}
+                    {item.question}
                   </summary>
                   <p className="mt-3 text-sm leading-6 text-forest-900/72">
-                    {answer}
+                    {item.answer}
                   </p>
                 </details>
               ))}
+            </div>
+            <div className="mt-6">
+              <ButtonLink href="/faq" variant="ghost">
+                Read Full FAQ
+              </ButtonLink>
             </div>
           </div>
         </div>

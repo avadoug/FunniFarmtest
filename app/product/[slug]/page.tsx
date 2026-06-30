@@ -390,6 +390,40 @@ export default async function ProductPage({ params }: ProductPageProps) {
             Products are not intended to diagnose, treat, cure, or prevent any
             disease.
           </Notice>
+          <Notice
+            icon={ShieldCheck}
+            title="Safe Use & Storage"
+            tone="cream"
+          >
+            Review product warnings, storage guidance, and responsible-use notes
+            before ordering.
+            <div className="mt-3 flex flex-wrap gap-3">
+              <Link
+                className="focus-ring inline-flex rounded-full font-black text-forest-900 underline decoration-clay/40 underline-offset-4 hover:text-clay"
+                href="/policies/warnings-safe-use"
+              >
+                Safe use guide
+              </Link>
+              <Link
+                className="focus-ring inline-flex rounded-full font-black text-forest-900 underline decoration-clay/40 underline-offset-4 hover:text-clay"
+                href="/policies/storage-shelf-life"
+              >
+                Storage guide
+              </Link>
+              <Link
+                className="focus-ring inline-flex rounded-full font-black text-forest-900 underline decoration-clay/40 underline-offset-4 hover:text-clay"
+                href="/policies/product-traceability"
+              >
+                Traceability
+              </Link>
+              <Link
+                className="focus-ring inline-flex rounded-full font-black text-forest-900 underline decoration-clay/40 underline-offset-4 hover:text-clay"
+                href="/policies/product-quality-complaints"
+              >
+                Quality concerns
+              </Link>
+            </div>
+          </Notice>
         </aside>
       </div>
 
@@ -410,6 +444,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </ButtonLink>
             <ButtonLink href="/lab-results" variant="ghost">
               View Lab Results
+            </ButtonLink>
+            <ButtonLink href="/faq" variant="ghost">
+              Read FAQ
             </ButtonLink>
           </div>
         </div>

@@ -4,6 +4,8 @@ import { getPolicy } from "@/lib/policies/content";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
+  description:
+    "The Funni Farm privacy policy for order requests, contact information, cookies, and customer information safeguards.",
 };
 
 export default function PrivacyPage() {

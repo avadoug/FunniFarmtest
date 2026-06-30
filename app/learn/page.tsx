@@ -39,6 +39,12 @@ const learningCards = [
     title: "Choosing a product format",
     text: "Compare gummies, capsules, oils, and flower by preference, serving style, ingredients, and shipping review needs.",
   },
+  {
+    href: "/policies/responsible-use",
+    icon: ShieldCheck,
+    title: "Responsible use",
+    text: "Review adult-use guidance, storage reminders, COA questions, travel notes, and safe product handling basics.",
+  },
 ];
 
 const faqs = [
@@ -78,8 +84,8 @@ export default function LearnPage() {
             <ButtonLink href="/shop" size="lg" variant="secondary">
               Shop Products
             </ButtonLink>
-            <ButtonLink href="#faq" size="lg" variant="ghost">
-              FAQ
+            <ButtonLink href="/faq" size="lg" variant="ghost">
+              Read FAQ
             </ButtonLink>
           </div>
         </div>
@@ -107,7 +113,7 @@ export default function LearnPage() {
         </div>
       </section>
 
-      <section className="mt-12 grid gap-5 md:grid-cols-3">
+      <section className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
         {learningCards.map((card) => (
           <LearnCard key={card.title} {...card} />
         ))}

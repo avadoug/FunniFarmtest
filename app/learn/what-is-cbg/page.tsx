@@ -103,7 +103,7 @@ export default function WhatIsCbgPage() {
             <ButtonLink href="/lab-results" size="lg" variant="secondary">
               View Lab Results
             </ButtonLink>
-            <ButtonLink href="#faq" size="lg" variant="ghost">
+            <ButtonLink href="/faq" size="lg" variant="ghost">
               Read FAQ
             </ButtonLink>
           </div>
@@ -287,8 +287,8 @@ export default function WhatIsCbgPage() {
         <ButtonLink href="/lab-results" size="lg" variant="secondary">
           View Lab Results
         </ButtonLink>
-        <ButtonLink href="/learn#faq" size="lg" variant="ghost">
-          Visit Learn FAQ
+        <ButtonLink href="/faq" size="lg" variant="ghost">
+          Visit Full FAQ
         </ButtonLink>
       </div>
     </main>

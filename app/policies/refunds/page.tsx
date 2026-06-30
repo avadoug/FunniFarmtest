@@ -4,6 +4,8 @@ import { getPolicy } from "@/lib/policies/content";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
+  description:
+    "The Funni Farm refund policy for hemp-derived products, merchandise returns, damaged orders, shipping compliance, and age requirements.",
 };
 
 export default function RefundsPage() {

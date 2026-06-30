@@ -256,7 +256,19 @@ export function CheckoutForm() {
               Hemp Compliance
             </Link>
             <Link className="font-bold underline underline-offset-4" href="/policies/age-policy">
-              Age Policy
+              Age Verification
+            </Link>
+            <Link className="font-bold underline underline-offset-4" href="/policies/warnings-safe-use">
+              Safe Use
+            </Link>
+            <Link className="font-bold underline underline-offset-4" href="/policies/shipping">
+              Shipping
+            </Link>
+            <Link className="font-bold underline underline-offset-4" href="/policies/product-availability-backorder">
+              Availability
+            </Link>
+            <Link className="font-bold underline underline-offset-4" href="/policies/contact-support">
+              Support
             </Link>
           </div>
         </section>

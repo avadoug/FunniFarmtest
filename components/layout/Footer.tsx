@@ -1,25 +1,30 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Sprout } from "lucide-react";
+import { Mail, MapPin, Phone, Sprout } from "lucide-react";
 import { Logo } from "./Logo";
+import { businessInfo } from "@/lib/brand/businessInfo";
 import { farmImages } from "@/lib/brand/farmImages";
 
 const shopLinks = [
   ["Shop Products", "/shop"],
-  ["CBG Education", "/cbg"],
+  ["Learn", "/learn"],
+  ["FAQ", "/faq"],
   ["Lab Results", "/lab-results"],
   ["Contact", "/contact"],
   ["Admin", "/admin"],
 ] as const;
 
 const policyLinks = [
+  ["All Policies", "/policies"],
   ["Terms", "/policies/terms"],
   ["Privacy", "/policies/privacy"],
   ["Shipping", "/policies/shipping"],
   ["Refunds", "/policies/refunds"],
-  ["Hemp Compliance", "/policies/hemp-compliance"],
-  ["Age Policy", "/policies/age-policy"],
-  ["Disclaimer", "/policies/disclaimer"],
+  ["Age Verification", "/policies/age-policy"],
+  ["Safe Use", "/policies/warnings-safe-use"],
+  ["Accessibility", "/policies/accessibility"],
+  ["Transparency", "/policies/transparency-customer-trust"],
+  ["Support", "/policies/contact-support"],
 ] as const;
 
 export function Footer() {
@@ -42,14 +47,23 @@ export function Footer() {
               <Mail aria-hidden className="size-4 text-harvest-300" />
               <a
                 className="font-bold underline decoration-cream-100/25 underline-offset-4 hover:text-harvest-300"
-                href="mailto:thefunnifarm@outlook.com"
+                href={businessInfo.emailHref}
               >
-                thefunnifarm@outlook.com
+                {businessInfo.email}
+              </a>
+            </p>
+            <p className="flex items-center gap-2">
+              <Phone aria-hidden className="size-4 text-harvest-300" />
+              <a
+                className="font-bold underline decoration-cream-100/25 underline-offset-4 hover:text-harvest-300"
+                href={businessInfo.phoneHref}
+              >
+                {businessInfo.phone}
               </a>
             </p>
             <p className="flex items-center gap-2">
               <MapPin aria-hidden className="size-4 text-harvest-300" />
-              Tennessee family farm.
+              {businessInfo.addressInline}
             </p>
           </div>
           <div className="mt-6 flex max-w-md items-center gap-4 rounded-seed border border-cream-50/10 bg-cream-50/8 p-3">

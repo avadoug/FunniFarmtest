@@ -58,6 +58,7 @@ export type Product = {
   hempComplianceNote: string;
   shippingRestrictions: string;
   ageRestricted: boolean;
+  bundleItems: string[];
   createdAt: string;
   updatedAt: string;
 };

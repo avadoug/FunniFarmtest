@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Sprout } from "lucide-react";
 import { Logo } from "./Logo";
+import { farmImages } from "@/lib/brand/farmImages";
 
 const shopLinks = [
   ["Shop Products", "/shop"],
@@ -38,11 +40,31 @@ export function Footer() {
             </p>
             <p className="flex items-center gap-2">
               <Mail aria-hidden className="size-4 text-harvest-300" />
-              hello@thefunnifarm.example
+              <a
+                className="font-bold underline decoration-cream-100/25 underline-offset-4 hover:text-harvest-300"
+                href="mailto:thefunnifarm@outlook.com"
+              >
+                thefunnifarm@outlook.com
+              </a>
             </p>
             <p className="flex items-center gap-2">
               <MapPin aria-hidden className="size-4 text-harvest-300" />
-              Farm location placeholder.
+              Tennessee family farm.
+            </p>
+          </div>
+          <div className="mt-6 flex max-w-md items-center gap-4 rounded-seed border border-cream-50/10 bg-cream-50/8 p-3">
+            <div className="relative size-20 shrink-0 overflow-hidden rounded-[1rem] border border-harvest-300/30">
+              <Image
+                alt={farmImages.hersheyCloseup.alt}
+                className="object-cover"
+                fill
+                sizes="80px"
+                src={farmImages.hersheyCloseup.src}
+              />
+            </div>
+            <p className="text-sm leading-6 text-cream-100/72">
+              Hershey keeps watch over the farm story, from livestock roots to
+              today&apos;s hemp wellness work.
             </p>
           </div>
         </div>

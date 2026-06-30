@@ -1,11 +1,19 @@
 import { z } from "zod";
 import { productBadges, productCategories } from "./types";
 
+const productCategorySchema = z.preprocess((value) => {
+  if (typeof value === "string" && value.trim().toLowerCase() === "bundle") {
+    return "Bundles";
+  }
+
+  return value;
+}, z.enum(productCategories));
+
 export const productSchema = z.object({
   id: z.string().min(1),
   slug: z.string().min(1),
   name: z.string().min(1),
-  category: z.enum(productCategories),
+  category: productCategorySchema,
   price: z.coerce.number().min(0),
   compareAtPrice: z.coerce.number().min(0).nullable(),
   shortDescription: z.string().min(1),
@@ -29,6 +37,7 @@ export const productSchema = z.object({
   hempComplianceNote: z.string(),
   shippingRestrictions: z.string(),
   ageRestricted: z.boolean(),
+  bundleItems: z.array(z.string()).default([]),
   createdAt: z.string(),
   updatedAt: z.string(),
 });

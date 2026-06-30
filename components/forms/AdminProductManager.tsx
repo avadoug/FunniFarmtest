@@ -42,6 +42,7 @@ const blankProduct: ProductInput = {
   shippingRestrictions:
     "Ships only where hemp-derived products are permitted. Final restricted-state list required.",
   ageRestricted: true,
+  bundleItems: [],
 };
 
 export function AdminProductManager() {

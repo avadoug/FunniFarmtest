@@ -47,7 +47,7 @@ export function ProductQuickView({
               {product.badge && <Badge tone="gold">{product.badge}</Badge>}
               <Badge tone="green">Non-Intoxicating</Badge>
               {product.category.includes("CBG") || product.tags.includes("CBG") ? (
-                <Badge tone="cream">CBG-Forward</Badge>
+                <Badge tone="cream">CBG Rich</Badge>
               ) : null}
               {product.labTested && <Badge tone="green">Lab Tested</Badge>}
               {product.ageRestricted && <Badge tone="dark">Adult Use</Badge>}

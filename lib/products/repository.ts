@@ -51,6 +51,30 @@ export async function getRelatedProducts(product: Product, limit = 3) {
     .slice(0, limit);
 }
 
+export function isBundleProduct(product: Product) {
+  return product.category === "Bundles";
+}
+
+export function getIncludedBundleProducts(bundle: Product, products: Product[]) {
+  const identifiers = bundle.bundleItems ?? [];
+
+  return identifiers
+    .map((identifier) =>
+      products.find(
+        (product) => product.slug === identifier || product.id === identifier,
+      ),
+    )
+    .filter((product): product is Product => Boolean(product));
+}
+
+export function getBundleSavings(bundle: Product) {
+  if (!bundle.compareAtPrice || bundle.compareAtPrice <= bundle.price) {
+    return 0;
+  }
+
+  return bundle.compareAtPrice - bundle.price;
+}
+
 export async function upsertProduct(input: ProductInput) {
   const parsed = productInputSchema.parse(input);
   const products = await readProductFile();

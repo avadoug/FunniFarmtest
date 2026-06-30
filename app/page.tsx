@@ -1,28 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  BadgeCheck,
+  ClipboardCheck,
+  FileText,
   FlaskConical,
-  LockKeyhole,
+  HeartHandshake,
+  MailCheck,
   PackageCheck,
   ShieldCheck,
+  ShoppingBag,
   Sparkles,
   Sprout,
 } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
+import { BundleCard } from "@/components/product/BundleCard";
 import { ProductCard } from "@/components/product/ProductCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TrustBadge } from "@/components/ui/TrustBadge";
-import { getFeaturedProducts } from "@/lib/products/repository";
+import { farmImages } from "@/lib/brand/farmImages";
+import { jackFrostCoa } from "@/lib/coa/jackFrostCbg001";
+import {
+  getFeaturedProducts,
+  getProducts,
+  isBundleProduct,
+} from "@/lib/products/repository";
 import { productCategories } from "@/lib/products/types";
 
 const categoryDescriptions: Record<string, string> = {
   Seeds: "Seed-packet style genetics listings with lineage placeholders.",
-  "CBG Gummies": "Non-intoxicating, small-batch CBG gummies for adults.",
-  "CBG Oils": "CBG-forward oils ready for clean label details.",
+  "CBG Gummies": "Label-backed, non-intoxicating CBG-rich gummies for adults.",
+  "CBG Oils": "CBG-rich oils ready for clean label details.",
   "Hemp Flower": "Non-intoxicating hemp flower with batch and COA support.",
   "Pre-Rolls": "Future adult hemp listings with clear restrictions.",
-  Capsules: "Measured hemp wellness capsules for future catalog growth.",
+  Capsules: "Measured CBG-rich capsule previews awaiting final label details.",
   Topicals: "Farm apothecary topicals with general wellness language.",
   Bundles: "Curated farm boxes, sample kits, and seasonal wellness sets.",
   Merch: "Shirts, stickers, hats, and simple farm goods.",
@@ -43,8 +53,58 @@ const faqs = [
   ],
 ];
 
+const orderSteps = [
+  {
+    icon: ShoppingBag,
+    title: "Choose products",
+    text: "Browse CBG gummies, oils, bundles, capsules, flower listings, seeds, and future farm goods.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Send an order request",
+    text: "Submit checkout details without entering credit-card numbers. The site creates a manual order request.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "The farm reviews it",
+    text: "The Funni Farm checks availability, adult-use requirements, shipping rules, product details, and compliance notes.",
+  },
+  {
+    icon: MailCheck,
+    title: "Receive payment options",
+    text: "They email back with Cash App, PayPal, or other approved non-card payment options and next steps.",
+  },
+];
+
+const processHighlights = [
+  {
+    image: farmImages.hempFieldSun,
+    label: "Cultivated in Tennessee",
+    text: "Rows in the sun connect the catalog back to a real family farm and real growing seasons.",
+  },
+  {
+    image: farmImages.cbgGummiesFrontLogo,
+    label: "Label-backed gummies",
+    text: "The supplied label brings real serving, ingredient, nutrition, and adult-use details into the catalog.",
+  },
+  {
+    image: farmImages.cbgCapsulesPouchCard,
+    label: "Capsule previews",
+    text: "Real capsule photos give the future capsule listing a clean product identity while final data stays marked pending.",
+  },
+  {
+    image: farmImages.hempStartsTable,
+    label: "Hands-on farm work",
+    text: "Young plants, outdoor work tables, and careful attention keep the farm story visible.",
+  },
+];
+
 export default async function HomePage() {
-  const featuredProducts = await getFeaturedProducts(4);
+  const [featuredProducts, allProducts] = await Promise.all([
+    getFeaturedProducts(4),
+    getProducts(),
+  ]);
+  const bundleProducts = allProducts.filter(isBundleProduct).slice(0, 2);
 
   return (
     <div>
@@ -81,8 +141,8 @@ export default async function HomePage() {
               <span className="rounded-full border border-forest-900/15 bg-harvest-300 px-3 py-2 shadow-soft">
                 Farm-Crafted Wellness
               </span>
-              <span className="rounded-full border border-forest-900/15 bg-forest-700 px-3 py-2 text-cream-50 shadow-soft">
-                CBG-Forward
+              <span className="rounded-full border border-forest-900/15 bg-berry px-3 py-2 text-cream-50 shadow-soft">
+                CBG Rich
               </span>
               <span className="rounded-full border border-forest-900/15 bg-cream-50 px-3 py-2 shadow-soft">
                 Lab-Tested
@@ -94,26 +154,27 @@ export default async function HomePage() {
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-forest-900/15 bg-cream-50/85 px-4 py-2 shadow-soft backdrop-blur">
               <Sprout aria-hidden className="size-5 text-forest-700" />
               <span className="text-xs font-black uppercase tracking-[0.2em] text-clay">
-                Non-intoxicating hemp + CBG
+                Family crafted in Tennessee
               </span>
             </div>
             <h1 className="font-display text-5xl font-black leading-[0.95] text-forest-900 sm:text-6xl lg:text-7xl">
-              CBG-Forward Hemp Wellness
+              Warm, honest CBG shopping from The Funni Farm.
             </h1>
             <p className="mt-6 max-w-2xl text-xl font-semibold leading-8 text-forest-900/86">
-              Small-batch CBG-forward hemp products crafted for adults who want
-              clean, plant-based wellness with farm-made care.
+              Small-batch, non-intoxicating CBG-rich hemp products for adults,
+              made with farm care, clear labels, and a friendly order review
+              before payment.
             </p>
             <p className="mt-4 max-w-2xl text-base font-medium leading-7 text-forest-900/78">
-              The Funni Farm makes simple hemp wellness goods with farm-crafted
-              care, clear batch details, lab-result links, and honest product
-              information.
+              Shop simple gummies, oils, bundles, flower listings, seeds, and
+              future farm goods with plain product details and no medical
+              promises.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
-              <ButtonLink href="/shop" size="lg">
-                Shop CBG Products
+              <ButtonLink href="/shop?category=CBG%20Gummies" size="lg">
+                Shop CBG
               </ButtonLink>
-              <ButtonLink href="/cbg" size="lg" variant="secondary">
+              <ButtonLink href="/learn/what-is-cbg" size="lg" variant="secondary">
                 Learn About CBG
               </ButtonLink>
             </div>
@@ -122,7 +183,7 @@ export default async function HomePage() {
                 Non-intoxicating hemp
               </span>
               <span className="rounded-full bg-cream-50/80 px-4 py-3 shadow-soft">
-                CBG-forward wellness
+                CBG-rich wellness
               </span>
               <span className="rounded-full bg-cream-50/80 px-4 py-3 shadow-soft">
                 Lab-tested transparency
@@ -133,27 +194,105 @@ export default async function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-4">
-          <TrustBadge
-            icon={FlaskConical}
-            text="Batch numbers and COA links help customers review product details."
-            title="Lab Transparency"
-          />
-          <TrustBadge
-            icon={LockKeyhole}
-            text="Built around adult hemp wellness routines and clear order review."
-            title="Adult Wellness"
-          />
-          <TrustBadge
-            icon={Sprout}
-            text="Small-batch hemp goods made with care, clarity, and good ingredients."
-            title="Farm Crafted"
-          />
+        <div className="grid gap-4 md:grid-cols-3">
           <TrustBadge
             icon={ShieldCheck}
-            text="Non-intoxicating positioning, age confirmations, and product disclaimers included."
-            title="CBG-Forward Wellness"
+            text="CBG-rich hemp products made for adults who want clear labels and non-recreational shopping."
+            title="Non-intoxicating hemp"
           />
+          <TrustBadge
+            icon={FlaskConical}
+            text="Batch numbers, label details, and COA links help customers review product information."
+            title="Batch transparency"
+          />
+          <TrustBadge
+            icon={HeartHandshake}
+            text="Orders are reviewed by the farm for availability, age, compliance, and shipping before payment instructions."
+            title="Farm-direct order review"
+          />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
+        <div className="grid overflow-hidden rounded-[2rem] border border-forest-900/12 bg-cream-50 shadow-farm lg:grid-cols-[.9fr_1.1fr]">
+          <div className="relative min-h-[18rem]">
+            <Image
+              alt={jackFrostCoa.image.alt}
+              className="object-cover object-top"
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              src={jackFrostCoa.image.previewSrc}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/48 via-transparent to-transparent" />
+          </div>
+          <div className="flex flex-col justify-center p-6 md:p-8">
+            <div className="inline-flex w-fit items-center gap-2 rounded-full border border-forest-900/12 bg-forest-700 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-cream-50">
+              <FileText aria-hidden className="size-4 text-harvest-300" />
+              Lab transparency
+            </div>
+            <h2 className="mt-4 font-display text-3xl font-black text-forest-900 md:text-4xl">
+              COA links and batch notes belong in plain view.
+            </h2>
+            <p className="mt-3 leading-7 text-forest-900/74">
+              The Lab Results page is where customers can review COA entries,
+              cannabinoid summaries, batch notes, and testing placeholders as
+              current files are added.
+            </p>
+            <p className="mt-3 text-sm font-bold leading-6 text-forest-900/62">
+              COAs support transparency only. They are not medical advice and
+              do not guarantee future batches or product effects.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/lab-results">
+                View Lab Results
+              </ButtonLink>
+              <ButtonLink href={`/lab-results#${jackFrostCoa.id}`} variant="ghost">
+                Read Jack Frost COA
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:items-end">
+          <SectionHeading
+            eyebrow="From field to farm shelf"
+            title="Real batches, real farm roots."
+          >
+            <p>
+              The Funni Farm visuals should feel like they came from the work
+              itself: plants in the field, trays in process, and products made
+              with care for adult hemp wellness routines.
+            </p>
+          </SectionHeading>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {processHighlights.map((item) => (
+              <article
+                className="group seed-card overflow-hidden rounded-seed transition duration-300 hover:-translate-y-1 hover:shadow-farm"
+                key={item.label}
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
+                  <Image
+                    alt={item.image.alt}
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 100vw"
+                    src={item.image.src}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-forest-900/58 via-transparent to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-2xl font-black text-forest-900">
+                    {item.label}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-forest-900/70">
+                    {item.text}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -178,6 +317,35 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+
+      {bundleProducts.length > 0 && (
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <SectionHeading
+              eyebrow="Bundle shelf"
+              title="Adult hemp bundles, packed with care."
+            >
+              <p>
+                Bundle products are configured as their own listings with
+                compare-at savings. Fulfillment still depends on availability,
+                current COAs, age confirmation, and shipping review.
+              </p>
+            </SectionHeading>
+            <ButtonLink href="/shop?category=Bundles" variant="ghost">
+              Shop Bundles
+            </ButtonLink>
+          </div>
+          <div className="mt-8 grid gap-6 xl:grid-cols-2">
+            {bundleProducts.map((bundle) => (
+              <BundleCard
+                bundle={bundle}
+                key={bundle.id}
+                products={allProducts}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading
@@ -212,32 +380,40 @@ export default async function HomePage() {
       </section>
 
       <section className="bg-forest-900 py-16 text-cream-50">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
-          <div>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
             <p className="text-xs font-black uppercase tracking-[0.22em] text-harvest-300">
-              Small farm values
+              How ordering works
             </p>
-            <h2 className="mt-3 font-display text-4xl font-black">
-              Honest labels, careful batches, and farm-made hemp wellness.
+            <h2 className="mt-3 font-display text-4xl font-black md:text-5xl">
+              A friendly order request, reviewed by the farm.
             </h2>
+            <p className="mt-4 leading-7 text-cream-100/76">
+              This storefront does not collect credit-card numbers. Checkout
+              creates an order request so The Funni Farm can review availability,
+              age requirements, shipping rules, and product details before
+              sending payment options.
+            </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              ["Good plants", "Products should be rooted in real batches, real ingredients, and real lab results."],
-              ["Good people", "Plain-English education and clear order expectations for normal customers."],
-              ["No medical claims", "General wellness language only, with clear disclaimers throughout."],
-              ["Room to grow", "Admin tools, product schema, and order email flow are ready for database upgrades."],
-            ].map(([title, text]) => (
-              <div
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {orderSteps.map((step, index) => (
+              <article
                 className="rounded-seed border border-cream-50/12 bg-cream-50/8 p-5"
-                key={title}
+                key={step.title}
               >
-                <BadgeCheck aria-hidden className="mb-3 size-6 text-harvest-300" />
-                <h3 className="font-display text-2xl font-black">{title}</h3>
+                <div className="flex items-center justify-between gap-3">
+                  <step.icon aria-hidden className="size-7 text-harvest-300" />
+                  <span className="font-display text-4xl font-black text-cream-50/20">
+                    {index + 1}
+                  </span>
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-black text-harvest-300">
+                  {step.title}
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-cream-100/72">
-                  {text}
+                  {step.text}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
@@ -247,58 +423,111 @@ export default async function HomePage() {
         <div className="seed-card rounded-seed p-6 md:p-8">
           <SectionHeading eyebrow="Plain English" title="What is CBG?">
             <p>
-              CBG is a hemp-derived cannabinoid people are curious about for
-              adult wellness routines. Learn the basics, how it differs from
-              other cannabinoids, and why lab results matter.
+              CBG is a cannabinoid found in hemp. The Funni Farm focuses on
+              non-intoxicating, CBG-rich hemp products with label-backed details
+              and lab transparency where available.
             </p>
           </SectionHeading>
+          <p className="mt-5 leading-7 text-forest-900/72">
+            Learn how CBG differs from THC, why product labels and COAs matter,
+            and how to shop without medical claims or recreational language.
+          </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/cbg">Read the CBG Guide</ButtonLink>
+            <ButtonLink href="/learn/what-is-cbg">Read the CBG Guide</ButtonLink>
             <ButtonLink href="/lab-results" variant="ghost">
               View COA Placeholders
             </ButtonLink>
           </div>
         </div>
-        <div className="rounded-seed border border-harvest-700/25 bg-harvest-300 p-6 text-forest-900 shadow-soft">
-          <PackageCheck aria-hidden className="size-9" />
-          <h3 className="mt-4 font-display text-3xl font-black">
-            Bundle callout
-          </h3>
-          <p className="mt-3 leading-7 text-forest-900/78">
-            Seasonal farm bundles, grower packs, gummy sets, oil kits, and merch
-            drops can be added as soon as real products are ready.
-          </p>
-          <ButtonLink className="mt-6" href="/shop" variant="dark">
-            Browse the Shelf
-          </ButtonLink>
+        <div className="group overflow-hidden rounded-seed border border-harvest-700/25 bg-harvest-300 text-forest-900 shadow-soft">
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <Image
+              alt={farmImages.gummyTraysFull.alt}
+              className="object-cover object-top transition duration-700 group-hover:scale-105"
+              fill
+              sizes="(min-width: 1024px) 36vw, 100vw"
+              src={farmImages.cbgGummiesFrontLogo.src}
+            />
+          </div>
+          <div className="p-6">
+            <PackageCheck aria-hidden className="size-9" />
+            <h3 className="mt-4 font-display text-3xl font-black">
+              Batch-labeled farm goods
+            </h3>
+            <p className="mt-3 leading-7 text-forest-900/78">
+              The gummy label data is structured on the product page so
+              customers can review serving size, ingredients, adult-use notes,
+              and lab-result placeholders.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="seed-card rounded-seed p-6 md:p-8">
-            <h2 className="font-display text-3xl font-black text-forest-900">
-              Customer Notes
+        <div className="grid overflow-hidden rounded-[2rem] border border-forest-900/12 bg-forest-900 text-cream-50 shadow-farm lg:grid-cols-[.9fr_1.1fr]">
+          <div className="relative min-h-[22rem]">
+            <Image
+              alt={farmImages.hersheyFenceWide.alt}
+              className="object-cover object-center"
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              src={farmImages.hersheyFenceWide.src}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-forest-900/60 via-transparent to-transparent lg:bg-gradient-to-r" />
+          </div>
+          <div className="flex flex-col justify-center p-6 md:p-10">
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-harvest-300">
+              Meet the mascot
+            </p>
+            <h2 className="mt-3 font-display text-4xl font-black">
+              Hershey keeps the farm story close.
             </h2>
-            <div className="mt-6 space-y-4">
-              {[
-                "Review placeholder: replace with real customer feedback only after permission.",
-                "Review placeholder: use verified reviews and keep language general-wellness only.",
-                "Review placeholder: keep testimonials compliant and adult-oriented.",
-              ].map((review) => (
-                <blockquote
-                  className="rounded-2xl border border-forest-900/10 bg-white/45 p-4 text-sm leading-6 text-forest-900/72"
-                  key={review}
-                >
-                  “{review}”
-                </blockquote>
-              ))}
+            <p className="mt-4 max-w-2xl leading-7 text-cream-100/76">
+              Hershey, the last remaining steer from the livestock days, brings
+              the farm&apos;s past into the present with a little personality
+              and a lot of heart.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/about" variant="secondary">
+                Read Our Story
+              </ButtonLink>
+              <ButtonLink
+                className="border-cream-50/30 text-cream-50 hover:bg-cream-50/10"
+                href="/contact"
+                variant="ghost"
+              >
+                Contact the Farm
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
+          <div className="seed-card rounded-seed p-6 md:p-8">
+            <FileText aria-hidden className="size-9 text-moss" />
+            <h2 className="mt-4 font-display text-4xl font-black text-forest-900">
+              Questions before you shop?
+            </h2>
+            <p className="mt-4 leading-7 text-forest-900/72">
+              Start with the quick answers, then use the product finder or
+              contact the farm if you want help comparing formats. This site
+              keeps recommendations preference-based and non-medical.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/product-finder" variant="secondary">
+                Take Product Finder
+              </ButtonLink>
+              <ButtonLink href="/contact" variant="ghost">
+                Contact the Farm
+              </ButtonLink>
             </div>
           </div>
           <div className="seed-card rounded-seed p-6 md:p-8">
-            <h2 className="font-display text-3xl font-black text-forest-900">
-              FAQ
-            </h2>
+            <p className="text-xs font-black uppercase tracking-[0.22em] text-clay">
+              FAQ preview
+            </p>
             <div className="mt-6 space-y-4">
               {faqs.map(([question, answer]) => (
                 <details

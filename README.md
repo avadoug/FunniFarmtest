@@ -1,8 +1,29 @@
 # The Funni Farm Storefront
 
-A simple, polished Next.js e-commerce starter for The Funni Farm: non-intoxicating CBG-forward hemp wellness products, seeds, gummies, oils, flower, capsules, topicals, bundles, merch, and future farm products.
+A simple, polished Next.js e-commerce starter for The Funni Farm: non-intoxicating CBG-rich hemp wellness products, seeds, gummies, oils, flower, capsules, topicals, bundles, merch, and future farm products.
 
 This first version is built for real browsing and safe order requests. It does **not** collect or store raw credit-card numbers.
+
+## Launch Readiness Priorities
+
+This project is a strong demo/storefront foundation, but it is not ready for real launch until the customer trust and operations layer is complete.
+
+Do these first:
+
+1. Rotate any exposed secrets and change the admin password.
+2. Add real product photos.
+3. Add real COAs, batch numbers, cannabinoid amounts, and CBG/CBD mg per serving.
+4. Finalize product descriptions, prices, ingredients, inventory, and serving language.
+5. Confirm legal shipping states and product-specific shipping restrictions.
+6. Connect production order request emails and contact form handling.
+7. Replace placeholder policies with reviewed business-specific policies.
+8. Connect a real database for production products, orders, contacts, and admin changes.
+9. Replace the local-only admin guard with proper authentication.
+10. Complete legal, hemp compliance, payment-method, and policy review.
+
+Do not launch assuming contact form leads are being saved unless the contact form is wired to Resend, SendGrid, Formspree, Supabase, a CRM, or another production backend. Do not launch assuming order requests are being emailed unless the order email environment variables are configured and tested.
+
+The site should help customers quickly understand what they are buying: real product photos, clear ingredients, serving amounts, cannabinoid amounts, batch numbers, COA links, shipping restrictions, adult-use language, and a simple manual-payment explanation.
 
 ## Stack
 
@@ -90,6 +111,8 @@ funni-local-admin
 
 Set `ADMIN_PASSWORD` in `.env.local` to change it. This is a placeholder guard, not production authentication.
 
+Before launch, change the default admin password, rotate any exposed secrets, and replace this local-only guard with proper authenticated admin access.
+
 ## Cart
 
 The cart uses localStorage for the first version. Customers can:
@@ -165,6 +188,8 @@ Products are not intended to diagnose, treat, cure, or prevent disease.
 ## Contact Form
 
 The contact form posts to `app/api/contact/route.ts` and saves mock submissions to `data/contact-submissions.local.json` in development only.
+
+Do **not** assume contact leads are being saved or delivered in production until a real backend is connected and tested.
 
 On Vercel/production, contact submission returns:
 

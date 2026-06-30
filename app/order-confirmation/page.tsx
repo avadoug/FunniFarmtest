@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CheckCircle2 } from "lucide-react";
+import { ManualOrderFlowBox } from "@/components/checkout/ManualOrderFlowBox";
 import { ButtonLink } from "@/components/ui/Button";
 import { getOrderByNumber } from "@/lib/orders/repository";
 import { formatMoney } from "@/lib/utils/format";
@@ -36,7 +37,8 @@ export default async function OrderConfirmationPage({
         <p className="mx-auto mt-4 max-w-2xl leading-7 text-forest-900/70">
           Your order request is ready for review. The Funni Farm will confirm
           availability, shipping, and compliance details, then email back with
-          Cash App, PayPal, or other approved non-card payment options.
+          Cash App, PayPal, or other approved non-card payment options. You pay
+          only after review, and orders ship after confirmation.
         </p>
 
         {order ? (
@@ -118,6 +120,8 @@ export default async function OrderConfirmationPage({
             )}
           </div>
         )}
+
+        <ManualOrderFlowBox className="mt-8 text-left" />
 
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <ButtonLink href="/shop" size="lg">

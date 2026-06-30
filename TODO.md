@@ -1,14 +1,41 @@
 # The Funni Farm Launch TODO
 
+## Priority Launch Blockers
+
+Do these before treating the storefront as launch-ready:
+
+1. Rotate any exposed secrets and change the admin password.
+2. Add real product photos.
+3. Add real COAs, batch numbers, cannabinoid amounts, and serving amounts.
+4. Finalize product descriptions, prices, ingredients, and inventory.
+5. Confirm legal shipping states and product-by-product shipping restrictions.
+6. Connect contact form and order request emails for production.
+7. Replace placeholder policies with business-specific reviewed policies.
+8. Connect a real database for products, orders, customers, contact leads, and admin operations.
+9. Replace the local-only admin guard with proper authenticated admin access.
+10. Complete legal, hemp compliance, payment-method, and policy review.
+
+Customer-comfort layer still needed before launch:
+
+- Every product should answer: what is it, who is it best for, how much CBG/CBD is in it, what ingredients are in it, what batch is it from, and where is the COA?
+- Every product should include real photos, final label details, adult-use language, shipping restrictions, and a matching COA link.
+- CBG education, lab transparency, checkout instructions, and policy language should remove moments where a customer wonders what they are buying or how payment works.
+
+Important production warning:
+
+- Do not launch assuming contact form leads are saved unless the contact backend is wired to Resend, SendGrid, Formspree, Supabase, a CRM, or another production service.
+- Do not launch assuming order requests are emailed unless `RESEND_API_KEY`, `FUNNI_FARM_ORDER_EMAIL`, and `ORDER_EMAIL_FROM` are configured and tested.
+- Do not use the default local admin password in production.
+
 ## Brand and Business Info
 
 - Confirm exact business name spelling: `FunniFarm`, `Funni Farm`, or `The Funni Farm`.
 - Confirm `public/brand/funni-farm-official-logo.png` is the final logo file for launch.
 - Confirm final brand colors and typography.
-- Add real Funni Farm origin story.
+- Add real Our Story photos once supplied.
 - Add founder names, farm history, and community details.
 - Add real business location or service area.
-- Add business email.
+- Confirm `thefunnifarm@outlook.com` is the final public business email.
 - Add real social links.
 - Decide whether wholesale accounts are needed.
 - Decide whether subscriptions are needed later.
@@ -20,6 +47,8 @@
 - Add final product list.
 - Add final product categories.
 - Add real product prices.
+- Confirm The Funni Farm CBG Gummies price, current inventory, and final package count.
+- Confirm The Funni Farm CBG Capsules price, capsule count, serving amount, ingredients, and whether this product should be active.
 - Add real product descriptions.
 - Add real product ingredients.
 - Add final suggested use language from labels.
@@ -29,6 +58,8 @@
 - Add real seed type details.
 - Add real inventory counts.
 - Add real batch numbers.
+- Add the current batch number for The Funni Farm CBG Gummies label.
+- Replace `CAPSULES-PLACEHOLDER-001` with the real capsule batch number before activation.
 - Add real cannabinoid amounts and profiles.
 - Confirm federal hemp compliance details for each batch.
 - Confirm gummies are marketed only to adults and not presented as child-friendly candy.
@@ -37,6 +68,8 @@
 
 - Add real COA PDFs.
 - Add real COA links or QR destinations.
+- Connect the CBG Gummies label QR/COA scan area to the current batch COA.
+- Add the current CBG Capsules COA before enabling capsule sales.
 - Add real date tested values.
 - Add real lab names.
 - Add real cannabinoid summaries.

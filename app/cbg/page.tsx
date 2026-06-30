@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { FlaskConical, Leaf, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { farmImages } from "@/lib/brand/farmImages";
+import { jackFrostCoa } from "@/lib/coa/jackFrostCbg001";
 
 export const metadata: Metadata = {
   title: "What is CBG?",
   description:
-    "A plain-English guide to non-intoxicating CBG-forward hemp wellness products and why lab results matter.",
+    "A plain-English guide to non-intoxicating CBG-rich hemp wellness products and why lab results matter.",
 };
 
 export default function CbgPage() {
@@ -16,7 +19,7 @@ export default function CbgPage() {
         <p>
           CBG stands for cannabigerol. It is one of many cannabinoids that can
           be found in hemp plants. The Funni Farm focuses on non-intoxicating
-          CBG-forward products made for adult hemp wellness routines.
+          CBG-rich products made for adult hemp wellness routines.
         </p>
       </SectionHeading>
 
@@ -33,7 +36,7 @@ export default function CbgPage() {
             </p>
             <p>
               CBG is different from THC. The Funni Farm products are not made
-              for intoxication; they are CBG-forward hemp wellness products for
+              for intoxication; they are CBG-rich hemp wellness products for
               adults who want clear labels and simple plant-based routines.
             </p>
             <p>
@@ -50,6 +53,27 @@ export default function CbgPage() {
         </div>
 
         <aside className="space-y-4">
+          <div className="seed-card overflow-hidden rounded-seed">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                alt={farmImages.cbgGummiesLabelFacts.alt}
+                className="object-cover object-top"
+                fill
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                src={farmImages.cbgGummiesLabelFacts.src}
+              />
+            </div>
+            <div className="p-5">
+              <h2 className="font-display text-2xl font-black text-forest-900">
+                Start with the label
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-forest-900/70">
+                Clear CBG education works best when it stays connected to real
+                hemp plants, real labels, serving details, and real lab
+                results.
+              </p>
+            </div>
+          </div>
           <Callout
             icon={Leaf}
             title="How CBG differs"
@@ -81,7 +105,17 @@ export default function CbgPage() {
       </section>
 
       <section className="mt-10 grid gap-6 lg:grid-cols-2">
-        <div className="seed-card rounded-seed p-6">
+        <div className="seed-card overflow-hidden rounded-seed">
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <Image
+              alt={farmImages.gummyTraysGreen.alt}
+              className="object-cover"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              src={farmImages.gummyTraysGreen.src}
+            />
+          </div>
+          <div className="p-6">
           <h2 className="font-display text-3xl font-black text-forest-900">
             Why people are interested
           </h2>
@@ -91,15 +125,18 @@ export default function CbgPage() {
             pages should stay focused on ingredients, serving format, batch
             details, and verified lab information.
           </p>
+          </div>
         </div>
         <div className="seed-card rounded-seed p-6">
           <h2 className="font-display text-3xl font-black text-forest-900">
-            Before buying
+            A real label example
           </h2>
           <p className="mt-3 leading-7 text-forest-900/72">
-            Check the product label, COA, age requirement, ingredients,
-            cannabinoid amount, and shipping restrictions for your location.
-            Final checkout should confirm this again.
+            The supplied Funni Farm CBG Gummies label states 2-3 mg CBG per
+            gummy, 100-150 mg total CBG per 50-gummy bag, mixed fruit flavor,
+            adult-use directions, ingredients, storage instructions, and a COA
+            scan area. Customers should still review the current batch COA and
+            final label before use.
           </p>
         </div>
       </section>
@@ -108,8 +145,15 @@ export default function CbgPage() {
         <ButtonLink href="/shop?category=CBG%20Gummies" size="lg">
           Shop CBG Products
         </ButtonLink>
+        <ButtonLink
+          href={`/lab-results#${jackFrostCoa.id}`}
+          size="lg"
+          variant="secondary"
+        >
+          Read Jack Frost COA
+        </ButtonLink>
         <ButtonLink href="/lab-results" size="lg" variant="ghost">
-          View COA / Lab Testing
+          View All Lab Testing
         </ButtonLink>
       </div>
     </div>

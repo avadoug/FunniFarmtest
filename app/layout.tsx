@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     template: "%s | The Funni Farm",
   },
   description:
-    "Small-batch, non-intoxicating CBG-forward hemp wellness products with lab-tested transparency and farm-crafted care.",
+    "Small-batch, non-intoxicating CBG-rich hemp wellness products with lab-tested transparency and farm-crafted care.",
   metadataBase: new URL("https://thefunnifarm.example"),
   openGraph: {
     title: "The Funni Farm",
     description:
-      "Non-intoxicating CBG-forward hemp wellness goods made with care.",
+      "Non-intoxicating CBG-rich hemp wellness goods made with care.",
     images: ["/brand/funni-farm-official-logo.png"],
     siteName: "The Funni Farm",
     type: "website",

@@ -5,6 +5,7 @@ import { useState } from "react";
 import { AlertTriangle, MailCheck, ShieldCheck } from "lucide-react";
 import { Button, ButtonLink } from "@/components/ui/Button";
 import { useCart } from "@/components/cart/CartProvider";
+import { ManualOrderFlowBox } from "@/components/checkout/ManualOrderFlowBox";
 import { formatMoney } from "@/lib/utils/format";
 
 const initialCustomer = {
@@ -101,9 +102,12 @@ export function CheckoutForm() {
             notices, then send an order request to The Funni Farm. They will
             review the order and email back with Cash App, PayPal, or other
             approved non-card payment options. This checkout is for
-            non-intoxicating CBG/hemp wellness products only.
+            non-intoxicating CBG/hemp wellness products only. You pay only
+            after the farm reviews the request.
           </p>
         </div>
+
+        <ManualOrderFlowBox />
 
         <section className="seed-card rounded-seed p-5 md:p-6">
           <h2 className="font-display text-3xl font-black text-forest-900">
@@ -310,8 +314,9 @@ export function CheckoutForm() {
         </div>
         <div className="mt-5 rounded-2xl border border-forest-900/10 bg-forest-700/8 p-4 text-sm leading-6 text-forest-900/68">
           <ShieldCheck aria-hidden className="mb-2 size-5 text-forest-700" />
-          No credit-card numbers are collected here. Payment instructions are
-          handled privately by email after order review.
+          We never ask for raw card numbers by email, and this site does not
+          store card details. Payment options are emailed only after order
+          review.
         </div>
         <Button className="mt-5 w-full" disabled={loading} size="lg" type="submit">
           {loading ? "Sending Order Request..." : "Send Order Request"}
